@@ -1,0 +1,93 @@
+<div class="search-container">
+  <mat-card class="search-card">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>search</mat-icon>
+        Search Wiki Pages
+      </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="search-form">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Search for pages...</mat-label>
+          <input 
+            matInput 
+            [(ngModel)]="searchQuery"
+            (input)="onSearchInputEvent($event)"
+            (keyup.enter)="search()"
+            placeholder="Enter search terms"
+            autocomplete="off">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        
+        <div class="search-actions">
+          <button mat-raised-button color="primary" (click)="search()" [disabled]="!searchQuery.trim()">
+            <mat-icon>search</mat-icon>
+            Search
+          </button>
+          <button mat-button (click)="clearSearch()" *ngIf="hasSearched">
+            <mat-icon>clear</mat-icon>
+            Clear
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="isLoading">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p>Searching...</p>
+  </div>
+
+  <!-- Search Results -->
+  <mat-card class="results-card" *ngIf="hasSearched && !isLoading">
+    <mat-card-header>
+      <mat-card-title>
+        Search Results
+        <span class="results-count" *ngIf="totalCount > 0">({{ totalCount }} found)</span>
+      </mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="no-results" *ngIf="searchResults.length === 0">
+        <mat-icon>search_off</mat-icon>
+        <h3>No results found</h3>
+        <p>Try different search terms or check your spelling.</p>
+      </div>
+      
+      <mat-list *ngIf="searchResults.length > 0" class="results-list">
+        <mat-list-item *ngFor="let page of searchResults; let last = last" class="result-item">
+          <div class="result-content">
+            <h3 class="result-title">
+              <a [routerLink]="['/wiki/page', page.slug]">{{ page.title }}</a>
+            </h3>
+            <div class="result-meta">
+              <span class="status-badge" [class]="'status-' + page.status.toLowerCase()">
+                {{ page.status }}
+              </span>
+              <span class="meta-item">
+                <mat-icon>visibility</mat-icon>
+                {{ page.viewCount }} views
+              </span>
+              <span class="meta-item">
+                <mat-icon>thumb_up</mat-icon>
+                {{ page.likeCount }} likes
+              </span>
+              <span class="meta-item">
+                <mat-icon>schedule</mat-icon>
+                {{ page.updatedAt | date:'short' }}
+              </span>
+            </div>
+            <div class="result-tags" *ngIf="page.tags?.length">
+              <mat-icon>local_offer</mat-icon>
+              <span class="tag" *ngFor="let tag of page.tags">{{ tag }}</span>
+            </div>
+          </div>
+          <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div> 

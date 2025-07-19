@@ -1,0 +1,129 @@
+// Import Angular Material styles
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Import Material Icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+// Global styles
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+}
+
+// Custom utility classes
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.p-24 {
+  padding: 24px;
+}
+
+// Material overrides for better appearance
+.mat-mdc-card {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mat-mdc-button {
+  border-radius: 8px !important;
+}
+
+.mat-mdc-raised-button {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+// Loading states
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+// Status badges
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  
+  &.status-published {
+    background-color: #e8f5e8;
+    color: #2e7d32;
+  }
+  
+  &.status-draft {
+    background-color: #fff3e0;
+    color: #f57c00;
+  }
+  
+  &.status-underreview {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+  
+  &.status-archived {
+    background-color: #f5f5f5;
+    color: #757575;
+  }
+}

@@ -1,0 +1,74 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="header-content">
+    <!-- Logo and Brand -->
+    <div class="brand-section">
+      <button mat-icon-button routerLink="/" class="logo-button">
+        <mat-icon>article</mat-icon>
+      </button>
+      <span class="brand-title" routerLink="/">WikiArea</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" *ngIf="isAuthenticated">
+      <button mat-button routerLink="/wiki" routerLinkActive="active">
+        <mat-icon>book</mat-icon>
+        Wiki
+      </button>
+      <button mat-button routerLink="/search" routerLinkActive="active">
+        <mat-icon>search</mat-icon>
+        Search
+      </button>
+      <button mat-button routerLink="/admin" routerLinkActive="active" *ngIf="hasRole('Administrator')">
+        <mat-icon>admin_panel_settings</mat-icon>
+        Admin
+      </button>
+    </nav>
+
+    <!-- User Menu -->
+    <div class="user-section" *ngIf="isAuthenticated; else loginButton">
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" class="user-menu-trigger">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      
+      <mat-menu #userMenu="matMenu" class="user-menu">
+        <div class="user-info" *ngIf="currentUser$ | async as user">
+          <div class="user-avatar">
+            <mat-icon>person</mat-icon>
+          </div>
+          <div class="user-details">
+            <div class="user-name">{{ user.displayName }}</div>
+            <div class="user-role">{{ user.role }}</div>
+            <div class="user-email">{{ user.email }}</div>
+          </div>
+        </div>
+        
+        <mat-divider></mat-divider>
+        
+        <button mat-menu-item routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          Profile
+        </button>
+        
+        <button mat-menu-item routerLink="/settings">
+          <mat-icon>settings</mat-icon>
+          Settings
+        </button>
+        
+        <mat-divider></mat-divider>
+        
+        <button mat-menu-item (click)="logout()" class="logout-item">
+          <mat-icon>logout</mat-icon>
+          Logout
+        </button>
+      </mat-menu>
+    </div>
+
+    <!-- Login Button (when not authenticated) -->
+    <ng-template #loginButton>
+      <button mat-raised-button color="accent" routerLink="/auth/login">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
+    </ng-template>
+  </div>
+</mat-toolbar> 

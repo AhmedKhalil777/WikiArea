@@ -1,0 +1,202 @@
+.header-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  backdrop-filter: blur(8px);
+  background: rgba(63, 81, 181, 0.95) !important;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  .logo-button .mat-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  
+      .user-menu-trigger .mat-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+}
+
+.user-menu {
+  min-width: 280px;
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    
+    .user-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background-color: #ddd;
+      border-radius: 50%;
+      
+      .mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        color: #666;
+      }
+    }
+    
+    .user-details {
+      flex: 1;
+      
+      .user-name {
+        font-weight: 500;
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 4px;
+      }
+      
+      .user-role {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+      
+      .user-email {
+        font-size: 12px;
+        color: #888;
+      }
+    }
+  }
+  
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    .mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+    
+    &.logout-item {
+      color: #f44336;
+      
+      .mat-icon {
+        color: #f44336;
+      }
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 8px;
+  }
+  
+  .brand-section {
+    .brand-title {
+      display: none;
+    }
+  }
+  
+  .nav-links {
+    gap: 4px;
+    
+    button {
+      min-width: auto;
+      padding: 0 8px;
+      
+      span:not(.mat-icon) {
+        display: none;
+      }
+    }
+  }
+  
+  .user-menu {
+    min-width: 250px;
+    
+    .user-info {
+      padding: 12px;
+      
+      .user-details {
+        .user-name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .header-content {
+    justify-content: space-between;
+  }
+} 

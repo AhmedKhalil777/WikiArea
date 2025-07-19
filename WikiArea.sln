@@ -1,0 +1,56 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E7B1B7A-8B7C-4D7E-9F7A-1B7C8D9E0F1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4F8C2C8B-9C8D-5E8F-AF8B-2C8D9F0E1F2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{5G9D3D9C-AD9E-6F9G-BG9C-3D9EAG1F2G3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiArea.Core", "src\WikiArea.Core\WikiArea.Core.csproj", "{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiArea.Application", "src\WikiArea.Application\WikiArea.Application.csproj", "{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiArea.Infrastructure", "src\WikiArea.Infrastructure\WikiArea.Infrastructure.csproj", "{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiArea.Web", "src\WikiArea.Web\WikiArea.Web.csproj", "{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WikiArea.Tests.Unit", "tests\WikiArea.Tests.Unit\WikiArea.Tests.Unit.csproj", "{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB}"
+EndProject
+
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A1B2C3D4-E5F6-4A5B-8C9D-1E2F3A4B5C6D} = {3E7B1B7A-8B7C-4D7E-9F7A-1B7C8D9E0F1A}
+		{B2C3D4E5-F6A7-5B6C-9D0E-2F3A4B5C6D7E} = {3E7B1B7A-8B7C-4D7E-9F7A-1B7C8D9E0F1A}
+		{C3D4E5F6-A7B8-6C7D-0E1F-3A4B5C6D7E8F} = {3E7B1B7A-8B7C-4D7E-9F7A-1B7C8D9E0F1A}
+		{D4E5F6A7-B8C9-7D8E-1F2A-4B5C6D7E8F9A} = {3E7B1B7A-8B7C-4D7E-9F7A-1B7C8D9E0F1A}
+		{E5F6A7B8-C9DA-8E9F-2A3B-5C6D7E8F9AAB} = {4F8C2C8B-9C8D-5E8F-AF8B-2C8D9F0E1F2B}
+	EndGlobalSection
+EndGlobal 

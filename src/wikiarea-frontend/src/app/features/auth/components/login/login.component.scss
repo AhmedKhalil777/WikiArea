@@ -1,0 +1,247 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+  }
+}
+
+.login-card {
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  position: relative;
+  z-index: 1;
+  
+  mat-card-header {
+    text-align: center;
+    padding: 24px 24px 0;
+    
+    mat-card-title {
+      font-size: 28px;
+      font-weight: 500;
+      color: #333;
+      margin: 0;
+    }
+    
+    mat-card-subtitle {
+      font-size: 14px;
+      color: #666;
+      margin: 8px 0 0;
+    }
+  }
+}
+
+.login-content {
+  text-align: center;
+  padding: 20px 0;
+  
+  .login-icon {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #667eea;
+    margin-bottom: 24px;
+  }
+}
+
+.auth-section {
+  margin: 24px 0;
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 8px 0;
+    
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  .section-description {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+  }
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.auth-button {
+  min-width: 120px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  
+  &.adfs-button {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .spinner {
+    animation: spin 1s linear infinite;
+  }
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 32px 0;
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+  
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+  }
+  
+  span {
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 0.95);
+  }
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffebee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.info-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+  text-align: center;
+  
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .inline-button {
+    min-width: auto;
+    height: auto;
+    padding: 2px 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    text-transform: none;
+  }
+}
+
+
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .login-container {
+    padding: 10px;
+  }
+  
+  .login-card {
+    margin: 0;
+    
+    mat-card-header {
+      padding: 16px 16px 0;
+      
+      mat-card-title {
+        font-size: 24px;
+      }
+    }
+  }
+  
+  .login-content {
+    padding: 16px 0;
+    
+    .login-icon {
+      font-size: 48px;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+    }
+  }
+  
+  .auth-section {
+    margin: 20px 0;
+    
+    .section-title {
+      font-size: 16px;
+    }
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    
+    .auth-button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }
+  
+  .divider {
+    margin: 24px 0;
+  }
+} 

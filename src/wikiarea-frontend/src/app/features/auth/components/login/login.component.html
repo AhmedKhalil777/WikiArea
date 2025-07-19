@@ -1,0 +1,84 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Welcome to WikiArea</mat-card-title>
+      <mat-card-subtitle>Choose your preferred sign-in method</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <div class="login-content">
+        <mat-icon class="login-icon">account_circle</mat-icon>
+        
+        <div class="error-message" *ngIf="error">
+          <mat-icon>error</mat-icon>
+          <span>{{ error }}</span>
+        </div>
+
+        <!-- Already authenticated message -->
+        <div class="info-message" *ngIf="authService.isAuthenticated">
+          <mat-icon>info</mat-icon>
+          <span>You are already signed in. 
+            <button mat-button color="primary" (click)="logout()" class="inline-button">
+              Sign out
+            </button> to switch accounts.
+          </span>
+        </div>
+        
+        <!-- Local Authentication Section -->
+        <div class="auth-section">
+          <h3 class="section-title">
+            <mat-icon>person</mat-icon>
+            Local Account
+          </h3>
+          <p class="section-description">
+            Sign in with your WikiArea account or create a new one
+          </p>
+          <div class="button-group">
+            <button 
+              mat-raised-button 
+              color="primary" 
+              (click)="navigateToSignin()"
+              class="auth-button">
+              <mat-icon>login</mat-icon>
+              Sign In
+            </button>
+            <button 
+              mat-raised-button 
+              color="accent" 
+              (click)="navigateToSignup()"
+              class="auth-button">
+              <mat-icon>person_add</mat-icon>
+              Sign Up
+            </button>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>OR</span>
+        </div>
+        
+        <!-- ADFS Authentication Section -->
+        <div class="auth-section">
+          <h3 class="section-title">
+            <mat-icon>business</mat-icon>
+            Corporate Account
+          </h3>
+          <p class="section-description">
+            Sign in using your Active Directory credentials
+          </p>
+          <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="loginWithADFS()" 
+            [disabled]="isLoading"
+            class="auth-button adfs-button">
+            <mat-icon *ngIf="!isLoading">domain</mat-icon>
+            <mat-icon *ngIf="isLoading" class="spinner">refresh</mat-icon>
+            {{ isLoading ? 'Signing in...' : 'Sign in with ADFS' }}
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div> 
